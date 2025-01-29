@@ -1,0 +1,27 @@
+---
+plugin: netbox.netbox.nb_inventory
+#api_endpoint: using environment variable NETBOX_API
+#token: using environment variable NETBOX_TOKEN
+validate_certs : False
+plurals: False
+config_context: True
+prefixes: False
+interfaces: False
+group_by:
+  - role
+  - platform
+  - tenant
+  - site
+  - location
+  - tag
+compose:
+  ansible_network_os: custom_fields.ansible_network_os
+  device_id: id
+device_query_filters:
+  - has_primary_ip: True
+  - status: active
+  - status: staged
+vm_query_filters:
+  - has_primary_ip: True
+  - status: active
+
