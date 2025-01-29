@@ -10,23 +10,23 @@ You need to have python3-venv installed.
 
 Do the following:
 
-sh '''
+``` sh
 git clone https://github.com/aopdal/test-ansible.git
 cd test-ansible
 ./upgrade.sh
-'''
+```
 
 create an .env file with:
 
-sh '''
+``` sh
 export NETBOX_API=https://xxx
 export NETBOX_TOKEN=xx
-'''
+```
 
 run:
 
-sh '''
+``` sh
 source venv/bin/activate
 sourve .env
 ansible-inventory -i nb_env.yml --list
-'''
+```
