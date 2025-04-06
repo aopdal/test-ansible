@@ -28,5 +28,5 @@ run:
 ``` sh
 source venv/bin/activate
 sourve .env
-ansible-inventory -i nb_env.yml --list
+ansible-inventory -i nb_inv.yml --list
 ```
