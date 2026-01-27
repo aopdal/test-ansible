@@ -1,0 +1,20 @@
+---
+- name: Retrieve prefixes not tagged with legacy-managed from NetBox
+  hosts: localhost
+  gather_facts: false
+
+  tasks:
+    - name: Fetch all prefixes from NetBox
+      ansible.builtin.set_fact:
+        all_prefixes: "{{ query('netbox.netbox.nb_lookup', 'prefixes',
+                         api_endpoint=lookup('env', 'NETBOX_API'),
+                         token=lookup('env', 'NETBOX_TOKEN'),
+                         validate_certs=true,
+                         api_filter='tag__n=legacy-managed') }}"
+
+    - name: Show only the prefix values
+      ansible.builtin.debug:
+        msg: "{{ item.value.prefix }}"
+      loop: "{{ all_prefixes }}"
+      loop_control:
+        label: "{{ item.value.prefix }}"

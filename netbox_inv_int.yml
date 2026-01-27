@@ -1,0 +1,76 @@
+# md
+# # netbox_inv_int.yml
+#
+# This inventory is for use in combination with extra-vars, and have the setting 'interfaces: true'
+# Example:  
+# ansible-inventory -i netbox_inv_int.yml --list --extra-vars '{"filter_tenant":"fabricator","filter_platform":"aoscx"}'
+# 
+# The in addition to filter using the extra-vars, you may use the group_by to limit further.
+# Limit to just have rack R1:  
+# ansible-playbook -i netbox_inv_int.yml -l rack_R1 playbook.yml --extra-vars '{"filter_tenant":"fabricator","filter_platform":"aoscx"}'
+#
+#     {% raw %}
+#     ---
+#     plugin: netbox.netbox.nb_inventory
+#     #api_endpoint: using environment variable NETBOX_API
+#     #token: using environment variable NETBOX_TOKEN
+#     validate_certs : false
+#     plurals: false
+#     config_context: true
+#     prefixes: false
+#     interfaces: true
+#     use_extra_vars: true
+#     group_by:
+#       - role
+#       - platform
+#       - tenant
+#       - site
+#       - location
+#       - rack
+#     compose:
+#       ansible_network_os: custom_fields.ansible_network_os
+#       device_id: id
+#     query_filters:
+#       - tenant: "{{ filter_tenant }}"
+#       - platform: "{{ filter_platform }}"
+#     device_query_filters:
+#       - has_primary_ip: True
+#       - status: active
+#       - status: staged
+#     vm_query_filters:
+#       - has_primary_ip: True
+#       - status: active
+#       - status: staged
+#     {% endraw %}
+# /md
+---
+plugin: netbox.netbox.nb_inventory
+#api_endpoint: using environment variable NETBOX_API
+#token: using environment variable NETBOX_TOKEN
+validate_certs : false
+plurals: false
+config_context: true
+prefixes: false
+interfaces: true
+use_extra_vars: true
+group_by:
+  - role
+  - platform
+  - tenant
+  - site
+  - location
+  - rack
+compose:
+  device_id: id
+query_filters:
+  - tenant: reference
+  - platform: aoscx
+device_query_filters:
+  - has_primary_ip: True
+  - status: active
+  - status: staged
+  - status: planned
+vm_query_filters:
+  - has_primary_ip: True
+  - status: active
+  - status: staged

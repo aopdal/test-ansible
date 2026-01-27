@@ -2,6 +2,9 @@
 plugin: netbox.netbox.nb_inventory
 #api_endpoint: using environment variable NETBOX_API
 #token: using environment variable NETBOX_TOKEN
+token:
+  type: Bearer
+  value: "{{ lookup('env', 'NETBOX_TOKEN') }}"
 validate_certs : False
 plurals: False
 config_context: True

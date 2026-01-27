@@ -1,0 +1,11 @@
+- name: test add vlan
+  hosts: all
+  gather_facts: False    
+  tasks:
+    - name: Create VLAN 300 with description and name
+      arubanetworks.aoscx.aoscx_vlan:
+        vlan_id: 300
+        name: UPLINK_VLAN
+        description: This is VLAN 300
+        state: delete
+

@@ -1,0 +1,21 @@
+---
+plugin: netbox.netbox.nb_inventory
+validate_certs : False
+config_context: True
+prefixes: False
+interfaces: False
+groups:
+  mpp: "'legacy-managed' not in tags"
+group_by:
+  - tags
+compose:
+  device_id: id
+query_filters:
+  - platform: "ubuntu"
+device_query_filters:
+  - has_primary_ip: True
+  - status: active
+vm_query_filters:
+  - has_primary_ip: True
+  - status: active
+

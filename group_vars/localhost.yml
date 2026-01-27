@@ -1,0 +1,5 @@
+netbox_url: '{{ lookup("ansible.builtin.env", "NETBOX_API") }}'
+netbox_token: '{{ lookup("ansible.builtin.env", "NETBOX_TOKEN") }}'
+psm_host: '{{ lookup("ansible.builtin.env", "PSM_IP") }}'
+psm_user: '{{ lookup("ansible.builtin.env", "PSM_USER") }}'
+psm_password: '{{ lookup("ansible.builtin.env", "PSM_PASSWORD") }}'

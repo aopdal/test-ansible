@@ -1,0 +1,8 @@
+netbox_url: '{{ lookup("ansible.builtin.env", "NETBOX_API") }}'
+netbox_token: '{{ lookup("ansible.builtin.env", "NETBOX_TOKEN") }}'
+tftp_server: '{{ lookup("ansible.builtin.env", "TFTP_SERVER") }}'
+psm_host: '{{ lookup("ansible.builtin.env", "PSM_IP") }}'
+psm_user: '{{ lookup("ansible.builtin.env", "PSM_USER") }}'
+psm_password: '{{ lookup("ansible.builtin.env", "PSM_PASSWORD") }}'
+aoscx_rest_user: '{{ lookup("ansible.builtin.env", "ARUBA_USER") }}'
+aoscx_rest_password: '{{ lookup("ansible.builtin.env", "ARUBA_PASSWORD") }}'

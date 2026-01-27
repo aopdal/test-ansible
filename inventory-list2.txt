@@ -1,0 +1,2204 @@
+{
+    "_meta": {
+        "hostvars": {
+            "a1-dns.opdal.net": {
+                "ansible_host": "172.16.4.14",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "config_context": [
+                    {}
+                ],
+                "custom_fields": {
+                    "device_bgp": false,
+                    "device_ospf": false,
+                    "device_vxlan": false
+                },
+                "device_id": 16,
+                "device_roles": [
+                    "dns"
+                ],
+                "device_types": [
+                    "raspberry-pi-rpi5"
+                ],
+                "is_virtual": false,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "manufacturers": [
+                    "raspberry-pi"
+                ],
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "172.16.4.14",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "private"
+                ],
+                "sites": [
+                    "a1"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [
+                    "autoreboot",
+                    "autoupdate"
+                ],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}"
+            },
+            "a1-jmp-int": {
+                "ansible_host": "172.16.4.17",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "cluster": "pve4.opdal.net",
+                "cluster_device": {
+                    "description": "",
+                    "display": "pve4",
+                    "id": 443,
+                    "name": "pve4",
+                    "url": "https://netbox.opdal.net/api/dcim/devices/443/"
+                },
+                "cluster_type": "proxmox",
+                "config_context": [
+                    {}
+                ],
+                "custom_fields": {
+                    "proxmox_node": "pve4",
+                    "proxmox_vm_storage": "local-lvm",
+                    "proxmox_vm_template": "noble-server-cloudimg-amd64-template",
+                    "proxmox_vmid": "100"
+                },
+                "device_id": 110,
+                "device_roles": [
+                    "proxmox-vm"
+                ],
+                "is_virtual": true,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "memory": 2048,
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "172.16.4.17",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "private"
+                ],
+                "sites": [
+                    "a1"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [
+                    "autoreboot",
+                    "autoupdate"
+                ],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}",
+                "vcpus": 2.0
+            },
+            "a1-test": {
+                "ansible_host": "172.16.4.2",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "cluster": "pve4.opdal.net",
+                "cluster_type": "proxmox",
+                "config_context": [
+                    {}
+                ],
+                "custom_fields": {
+                    "proxmox_node": "pve4",
+                    "proxmox_public_ssh_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOh6JGjZJjcf3BYtYblUbRH9DdzYX3oKA8TFCDinsutH arne@ao-laptop\r\nssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKRxGcu9eaDg3AeqmC+3FLX0RP35XI5bYx6JggsyoP9r arne@auto\r\nssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDp84CwadngAUcUtiwTlEDvJ272mkNgsIc1cvObOocIY2XuTnLbEZz/neR2KZCyQpg2v/im72J/XWtJBw+rHD7ZNjV+hh00UDenTpPy137qvFB3R+aosRx56hfpstpt28msgj4jBProq4vdHRICp5KCeHvZILWjEfiK1wMtdWK8qDqYBj+H/K2cEdKTUUC04mqJBjx5utPx/bb6bJIKxzZLlkmKvYBls8gRptBSh5OiIRJTX6+DmZplZGA3G2sQ4mprSUMetVg31YSGZpZD03EZ8hHoYj0vAt2FxU8Kl7kMjCuEHI+mYblh5lFUdOmA91zUJku+1qEtcGaxAgV7lGhN8Q6MQpNDBp4eKR4pdMbeSajggIIaaolE+eGLUn7CnDGu7R6zf49X3yLOxe0q3Imn/DDsk2detchF1/cwPzyKVgYQDrT/i54qzK80EL0SAvvJcFytZJ2OlUzNxNtQERk2M7InNj40H3N7F02BDeQUhWUf3PIu/dngMJd4t230HG8= one\\arnopdal@PCNOR451656",
+                    "proxmox_vm_storage": "local-lvm",
+                    "proxmox_vm_template": "noble-server-cloudimg-amd64-template",
+                    "proxmox_vmid": "101"
+                },
+                "device_id": 112,
+                "device_roles": [
+                    "proxmox-vm"
+                ],
+                "disk": 20480,
+                "is_virtual": true,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "memory": 2048,
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "172.16.4.2",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "private"
+                ],
+                "sites": [
+                    "a1"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}",
+                "vcpus": 2.0
+            },
+            "auto.opdal.net": {
+                "ansible_host": "172.16.3.21",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "cluster": "pve2.opdal.net",
+                "cluster_type": "proxmox",
+                "config_context": [
+                    {
+                        "site_parameters": {
+                            "dhcp": {
+                                "servers": [
+                                    "172.16.3.15"
+                                ]
+                            },
+                            "dns": {
+                                "search": [
+                                    "opdal.net",
+                                    "ao-test.net",
+                                    "ao-test.org"
+                                ],
+                                "servers": [
+                                    "172.16.3.10",
+                                    "91.90.45.8"
+                                ]
+                            },
+                            "ntp": {
+                                "servers": [
+                                    "h1-rpi1.opdal.net"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "custom_fields": {
+                    "proxmox_node": "pve2",
+                    "proxmox_vm_storage": "sdb-lvm",
+                    "proxmox_vmid": "101"
+                },
+                "device_id": 46,
+                "device_roles": [
+                    "proxmox-vm"
+                ],
+                "disk": 50000,
+                "is_virtual": true,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "memory": 8192,
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "172.16.3.21",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "private"
+                ],
+                "sites": [
+                    "hvaler"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [
+                    "autoreboot",
+                    "autoupdate"
+                ],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}",
+                "vcpus": 4.0
+            },
+            "console.opdal.net": {
+                "ansible_host": "172.16.3.20",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "config_context": [
+                    {
+                        "site_parameters": {
+                            "dhcp": {
+                                "servers": [
+                                    "172.16.3.15"
+                                ]
+                            },
+                            "dns": {
+                                "search": [
+                                    "opdal.net",
+                                    "ao-test.net",
+                                    "ao-test.org"
+                                ],
+                                "servers": [
+                                    "172.16.3.10",
+                                    "91.90.45.8"
+                                ]
+                            },
+                            "ntp": {
+                                "servers": [
+                                    "h1-rpi1.opdal.net"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "custom_fields": {
+                    "device_bgp": false,
+                    "device_evpn": false,
+                    "device_ospf": false,
+                    "device_vsx": false,
+                    "device_vxlan": false
+                },
+                "device_id": 368,
+                "device_roles": [
+                    "console-server"
+                ],
+                "device_types": [
+                    "pi-4-model-b"
+                ],
+                "is_virtual": false,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "manufacturers": [
+                    "raspberry-pi"
+                ],
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "172.16.3.20",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "private"
+                ],
+                "sites": [
+                    "hvaler"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [
+                    "autoreboot",
+                    "autoupdate",
+                    "legacy-managed"
+                ],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}"
+            },
+            "div.opdal.net": {
+                "ansible_host": "91.90.45.8",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "cluster": "pve.opdal.net",
+                "cluster_type": "proxmox",
+                "config_context": [
+                    {}
+                ],
+                "custom_fields": {
+                    "proxmox_vmid": "109"
+                },
+                "device_id": 10,
+                "device_roles": [
+                    "dns"
+                ],
+                "disk": 50000,
+                "is_virtual": true,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "memory": 2048,
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "91.90.45.8",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "bilx"
+                ],
+                "sites": [
+                    "cjh"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [
+                    "autoreboot",
+                    "autoupdate"
+                ],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}",
+                "vcpus": 2.0
+            },
+            "git.opdal.net": {
+                "ansible_host": "172.16.3.28",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "cluster": "pve2.opdal.net",
+                "cluster_type": "proxmox",
+                "config_context": [
+                    {
+                        "site_parameters": {
+                            "dhcp": {
+                                "servers": [
+                                    "172.16.3.15"
+                                ]
+                            },
+                            "dns": {
+                                "search": [
+                                    "opdal.net",
+                                    "ao-test.net",
+                                    "ao-test.org"
+                                ],
+                                "servers": [
+                                    "172.16.3.10",
+                                    "91.90.45.8"
+                                ]
+                            },
+                            "ntp": {
+                                "servers": [
+                                    "h1-rpi1.opdal.net"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "custom_fields": {
+                    "proxmox_node": "pve2",
+                    "proxmox_vm_storage": "sdb-lvm",
+                    "proxmox_vmid": "117"
+                },
+                "device_id": 57,
+                "device_roles": [
+                    "proxmox-vm"
+                ],
+                "disk": 100000,
+                "is_virtual": true,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "memory": 16384,
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "172.16.3.28",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "private"
+                ],
+                "sites": [
+                    "hvaler"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [
+                    "autoreboot",
+                    "autoupdate"
+                ],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}",
+                "vcpus": 4.0
+            },
+            "graylog.opdal.net": {
+                "ansible_host": "172.16.3.27",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "cluster": "pve2.opdal.net",
+                "cluster_type": "proxmox",
+                "config_context": [
+                    {
+                        "site_parameters": {
+                            "dhcp": {
+                                "servers": [
+                                    "172.16.3.15"
+                                ]
+                            },
+                            "dns": {
+                                "search": [
+                                    "opdal.net",
+                                    "ao-test.net",
+                                    "ao-test.org"
+                                ],
+                                "servers": [
+                                    "172.16.3.10",
+                                    "91.90.45.8"
+                                ]
+                            },
+                            "ntp": {
+                                "servers": [
+                                    "h1-rpi1.opdal.net"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "custom_fields": {
+                    "proxmox_node": "pve2",
+                    "proxmox_vm_storage": "sdb-lvm",
+                    "proxmox_vmid": "115"
+                },
+                "device_id": 56,
+                "device_roles": [
+                    "proxmox-vm"
+                ],
+                "disk": 50000,
+                "is_virtual": true,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "memory": 8192,
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "172.16.3.27",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "private"
+                ],
+                "sites": [
+                    "hvaler"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [
+                    "autoreboot",
+                    "autoupdate"
+                ],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}",
+                "vcpus": 4.0
+            },
+            "h1-jmp.opdal.net": {
+                "ansible_host": "172.16.3.23",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "cluster": "pve2.opdal.net",
+                "cluster_type": "proxmox",
+                "config_context": [
+                    {
+                        "site_parameters": {
+                            "dhcp": {
+                                "servers": [
+                                    "172.16.3.15"
+                                ]
+                            },
+                            "dns": {
+                                "search": [
+                                    "opdal.net",
+                                    "ao-test.net",
+                                    "ao-test.org"
+                                ],
+                                "servers": [
+                                    "172.16.3.10",
+                                    "91.90.45.8"
+                                ]
+                            },
+                            "ntp": {
+                                "servers": [
+                                    "h1-rpi1.opdal.net"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "custom_fields": {
+                    "proxmox_node": "pve2",
+                    "proxmox_vm_storage": "sdb-lvm",
+                    "proxmox_vmid": "112"
+                },
+                "device_id": 48,
+                "device_roles": [
+                    "proxmox-vm"
+                ],
+                "disk": 50000,
+                "is_virtual": true,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "memory": 8192,
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "172.16.3.23",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "private"
+                ],
+                "sites": [
+                    "hvaler"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [
+                    "autoreboot",
+                    "autoupdate"
+                ],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}",
+                "vcpus": 4.0
+            },
+            "huly": {
+                "ansible_host": "172.16.3.40",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "cluster": "pve2.opdal.net",
+                "cluster_type": "proxmox",
+                "config_context": [
+                    {
+                        "site_parameters": {
+                            "dhcp": {
+                                "servers": [
+                                    "172.16.3.15"
+                                ]
+                            },
+                            "dns": {
+                                "search": [
+                                    "opdal.net",
+                                    "ao-test.net",
+                                    "ao-test.org"
+                                ],
+                                "servers": [
+                                    "172.16.3.10",
+                                    "91.90.45.8"
+                                ]
+                            },
+                            "ntp": {
+                                "servers": [
+                                    "h1-rpi1.opdal.net"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "custom_fields": {
+                    "proxmox_node": "pve2",
+                    "proxmox_public_ssh_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOh6JGjZJjcf3BYtYblUbRH9DdzYX3oKA8TFCDinsutH arne@ao-laptop ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDp84CwadngAUcUtiwTlEDvJ272mkNgsIc1cvObOocIY2XuTnLbEZz/neR2KZCyQpg2v/im72J/XWtJBw+rHD7ZNjV+hh00UDenTpPy137qvFB3R+aosRx56hfpstpt28msgj4jBProq4vdHRICp5KCeHvZILWjEfiK1wMtdWK8qDqYBj+H/K2cEdKTUUC04mqJBjx5utPx/bb6bJIKxzZLlkmKvYBls8gRptBSh5OiIRJTX6+DmZplZGA3G2sQ4mprSUMetVg31YSGZpZD03EZ8hHoYj0vAt2FxU8Kl7kMjCuEHI+mYblh5lFUdOmA91zUJku+1qEtcGaxAgV7lGhN8Q6MQpNDBp4eKR4pdMbeSajggIIaaolE+eGLUn7CnDGu7R6zf49X3yLOxe0q3Imn/DDsk2detchF1/cwPzyKVgYQDrT/i54qzK80EL0SAvvJcFytZJ2OlUzNxNtQERk2M7InNj40H3N7F02BDeQUhWUf3PIu/dngMJd4t230HG8=",
+                    "proxmox_vm_storage": "sdb-lvm",
+                    "proxmox_vm_template": "noble-server-cloudimg-amd64-template",
+                    "proxmox_vmid": "119"
+                },
+                "device_id": 97,
+                "device_roles": [
+                    "proxmox-vm"
+                ],
+                "disk": 81920,
+                "is_virtual": true,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "memory": 4096,
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "172.16.3.40",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "private"
+                ],
+                "sites": [
+                    "hvaler"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [
+                    "autoreboot",
+                    "autoupdate",
+                    "nginx",
+                    "ssl",
+                    "webserver"
+                ],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}",
+                "vcpus": 2.0
+            },
+            "librenms": {
+                "ansible_host": "172.16.3.2",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "cluster": "pve2.opdal.net",
+                "cluster_type": "proxmox",
+                "config_context": [
+                    {
+                        "site_parameters": {
+                            "dhcp": {
+                                "servers": [
+                                    "172.16.3.15"
+                                ]
+                            },
+                            "dns": {
+                                "search": [
+                                    "opdal.net",
+                                    "ao-test.net",
+                                    "ao-test.org"
+                                ],
+                                "servers": [
+                                    "172.16.3.10",
+                                    "91.90.45.8"
+                                ]
+                            },
+                            "ntp": {
+                                "servers": [
+                                    "h1-rpi1.opdal.net"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "custom_fields": {
+                    "proxmox_node": "pve2",
+                    "proxmox_public_ssh_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOh6JGjZJjcf3BYtYblUbRH9DdzYX3oKA8TFCDinsutH arne@ao-laptop",
+                    "proxmox_vm_storage": "sdb-lvm",
+                    "proxmox_vm_template": "noble-server-cloudimg-amd64-template",
+                    "proxmox_vmid": "103"
+                },
+                "device_id": 85,
+                "device_roles": [
+                    "proxmox-vm"
+                ],
+                "disk": 51200,
+                "is_virtual": true,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "memory": 8192,
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "172.16.3.2",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "private"
+                ],
+                "sites": [
+                    "hvaler"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [
+                    "autoreboot",
+                    "autoupdate",
+                    "nginx",
+                    "ssl",
+                    "webserver"
+                ],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}",
+                "vcpus": 4.0
+            },
+            "nc.opdal.net": {
+                "ansible_host": "172.16.3.22",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "cluster": "pve2.opdal.net",
+                "cluster_type": "proxmox",
+                "config_context": [
+                    {
+                        "site_parameters": {
+                            "dhcp": {
+                                "servers": [
+                                    "172.16.3.15"
+                                ]
+                            },
+                            "dns": {
+                                "search": [
+                                    "opdal.net",
+                                    "ao-test.net",
+                                    "ao-test.org"
+                                ],
+                                "servers": [
+                                    "172.16.3.10",
+                                    "91.90.45.8"
+                                ]
+                            },
+                            "ntp": {
+                                "servers": [
+                                    "h1-rpi1.opdal.net"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "custom_fields": {
+                    "proxmox_node": "pve2",
+                    "proxmox_vm_storage": "sdb-lvm",
+                    "proxmox_vmid": "100"
+                },
+                "device_id": 58,
+                "device_roles": [
+                    "proxmox-vm"
+                ],
+                "disk": 250000,
+                "is_virtual": true,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "memory": 16384,
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "172.16.3.22",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "private"
+                ],
+                "sites": [
+                    "hvaler"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [
+                    "autoreboot",
+                    "autoupdate"
+                ],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}",
+                "vcpus": 4.0
+            },
+            "netbox.opdal.net": {
+                "ansible_host": "172.16.3.18",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "cluster": "pve2.opdal.net",
+                "cluster_type": "proxmox",
+                "config_context": [
+                    {
+                        "site_parameters": {
+                            "dhcp": {
+                                "servers": [
+                                    "172.16.3.15"
+                                ]
+                            },
+                            "dns": {
+                                "search": [
+                                    "opdal.net",
+                                    "ao-test.net",
+                                    "ao-test.org"
+                                ],
+                                "servers": [
+                                    "172.16.3.10",
+                                    "91.90.45.8"
+                                ]
+                            },
+                            "ntp": {
+                                "servers": [
+                                    "h1-rpi1.opdal.net"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "custom_fields": {
+                    "proxmox_node": "pve2",
+                    "proxmox_vm_storage": "sdb-lvm",
+                    "proxmox_vmid": "107"
+                },
+                "device_id": 7,
+                "device_roles": [
+                    "proxmox-vm"
+                ],
+                "disk": 50000,
+                "is_virtual": true,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "memory": 8192,
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "172.16.3.18",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "private"
+                ],
+                "sites": [
+                    "hvaler"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [
+                    "autoupdate",
+                    "nginx",
+                    "ssl",
+                    "webserver"
+                ],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}",
+                "vcpus": 4.0
+            },
+            "netbox2.opdal.net": {
+                "ansible_host": "172.16.3.17",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "cluster": "pve2.opdal.net",
+                "cluster_type": "proxmox",
+                "config_context": [
+                    {
+                        "site_parameters": {
+                            "dhcp": {
+                                "servers": [
+                                    "172.16.3.15"
+                                ]
+                            },
+                            "dns": {
+                                "search": [
+                                    "opdal.net",
+                                    "ao-test.net",
+                                    "ao-test.org"
+                                ],
+                                "servers": [
+                                    "172.16.3.10",
+                                    "91.90.45.8"
+                                ]
+                            },
+                            "ntp": {
+                                "servers": [
+                                    "h1-rpi1.opdal.net"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "custom_fields": {
+                    "proxmox_node": "pve2",
+                    "proxmox_vm_storage": "sdb-lvm",
+                    "proxmox_vmid": "106"
+                },
+                "device_id": 45,
+                "device_roles": [
+                    "proxmox-vm"
+                ],
+                "disk": 50000,
+                "is_virtual": true,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "memory": 8192,
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "172.16.3.17",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "private"
+                ],
+                "sites": [
+                    "hvaler"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [
+                    "autoreboot",
+                    "autoupdate"
+                ],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}",
+                "vcpus": 4.0
+            },
+            "netbox3": {
+                "ansible_host": "172.16.3.36",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "cluster": "pve2.opdal.net",
+                "cluster_type": "proxmox",
+                "config_context": [
+                    {
+                        "site_parameters": {
+                            "dhcp": {
+                                "servers": [
+                                    "172.16.3.15"
+                                ]
+                            },
+                            "dns": {
+                                "search": [
+                                    "opdal.net",
+                                    "ao-test.net",
+                                    "ao-test.org"
+                                ],
+                                "servers": [
+                                    "172.16.3.10",
+                                    "91.90.45.8"
+                                ]
+                            },
+                            "ntp": {
+                                "servers": [
+                                    "h1-rpi1.opdal.net"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "custom_fields": {
+                    "proxmox_node": "pve2",
+                    "proxmox_vmid": "111"
+                },
+                "device_id": 95,
+                "device_roles": [
+                    "proxmox-vm"
+                ],
+                "disk": 50000,
+                "is_virtual": true,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "memory": 8192,
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "172.16.3.36",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "private"
+                ],
+                "sites": [
+                    "hvaler"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [
+                    "autoupdate",
+                    "nginx"
+                ],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}",
+                "vcpus": 4.0
+            },
+            "nms.opdal.net": {
+                "ansible_host": "91.90.45.6",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "cluster": "pve.opdal.net",
+                "cluster_type": "proxmox",
+                "config_context": [
+                    {}
+                ],
+                "custom_fields": {
+                    "proxmox_vmid": "101"
+                },
+                "device_id": 3,
+                "device_roles": [
+                    "librenms"
+                ],
+                "disk": 100000,
+                "is_virtual": true,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "memory": 8192,
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "91.90.45.6",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "bilx"
+                ],
+                "sites": [
+                    "cjh"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [
+                    "autoreboot",
+                    "autoupdate"
+                ],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}",
+                "vcpus": 4.0
+            },
+            "semui.opdal.net": {
+                "ansible_host": "172.16.3.26",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "cluster": "pve2.opdal.net",
+                "cluster_type": "proxmox",
+                "config_context": [
+                    {
+                        "site_parameters": {
+                            "dhcp": {
+                                "servers": [
+                                    "172.16.3.15"
+                                ]
+                            },
+                            "dns": {
+                                "search": [
+                                    "opdal.net",
+                                    "ao-test.net",
+                                    "ao-test.org"
+                                ],
+                                "servers": [
+                                    "172.16.3.10",
+                                    "91.90.45.8"
+                                ]
+                            },
+                            "ntp": {
+                                "servers": [
+                                    "h1-rpi1.opdal.net"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "custom_fields": {
+                    "proxmox_node": "pve2",
+                    "proxmox_vm_storage": "sdb-lvm",
+                    "proxmox_vmid": "113"
+                },
+                "device_id": 53,
+                "device_roles": [
+                    "proxmox-vm"
+                ],
+                "disk": 50000,
+                "is_virtual": true,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "memory": 8000,
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "172.16.3.26",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "private"
+                ],
+                "sites": [
+                    "hvaler"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [
+                    "nginx",
+                    "ssl"
+                ],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}",
+                "vcpus": 8.0
+            },
+            "semui2": {
+                "ansible_host": "172.16.3.41",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "cluster": "pve2.opdal.net",
+                "cluster_type": "proxmox",
+                "config_context": [
+                    {
+                        "site_parameters": {
+                            "dhcp": {
+                                "servers": [
+                                    "172.16.3.15"
+                                ]
+                            },
+                            "dns": {
+                                "search": [
+                                    "opdal.net",
+                                    "ao-test.net",
+                                    "ao-test.org"
+                                ],
+                                "servers": [
+                                    "172.16.3.10",
+                                    "91.90.45.8"
+                                ]
+                            },
+                            "ntp": {
+                                "servers": [
+                                    "h1-rpi1.opdal.net"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "custom_fields": {
+                    "proxmox_node": "pve2",
+                    "proxmox_vm_storage": "sdb-lvm",
+                    "proxmox_vmid": "120"
+                },
+                "device_id": 104,
+                "device_roles": [
+                    "proxmox-vm"
+                ],
+                "disk": 50000,
+                "is_virtual": true,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "memory": 8000,
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "172.16.3.41",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "private"
+                ],
+                "sites": [
+                    "hvaler"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}",
+                "vcpus": 8.0
+            },
+            "srv.opdal.net": {
+                "ansible_host": "172.16.3.19",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "cluster": "pve2.opdal.net",
+                "cluster_type": "proxmox",
+                "config_context": [
+                    {
+                        "site_parameters": {
+                            "dhcp": {
+                                "servers": [
+                                    "172.16.3.15"
+                                ]
+                            },
+                            "dns": {
+                                "search": [
+                                    "opdal.net",
+                                    "ao-test.net",
+                                    "ao-test.org"
+                                ],
+                                "servers": [
+                                    "172.16.3.10",
+                                    "91.90.45.8"
+                                ]
+                            },
+                            "ntp": {
+                                "servers": [
+                                    "h1-rpi1.opdal.net"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "custom_fields": {
+                    "proxmox_node": "pve2",
+                    "proxmox_vm_storage": "sdb-lvm",
+                    "proxmox_vmid": "114"
+                },
+                "device_id": 54,
+                "device_roles": [
+                    "proxmox-vm"
+                ],
+                "disk": 300000,
+                "is_virtual": true,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "memory": 8192,
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "172.16.3.19",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "private"
+                ],
+                "sites": [
+                    "hvaler"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [
+                    "autoreboot",
+                    "autoupdate"
+                ],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}",
+                "vcpus": 4.0
+            },
+            "st2.opdal.net": {
+                "ansible_host": "91.90.45.13",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "cluster": "pve.opdal.net",
+                "cluster_type": "proxmox",
+                "config_context": [
+                    {}
+                ],
+                "custom_fields": {
+                    "proxmox_vmid": "110"
+                },
+                "device_id": 40,
+                "device_roles": [
+                    "stackstorm"
+                ],
+                "disk": 50000,
+                "is_virtual": true,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "memory": 16384,
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "91.90.45.13",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "bilx"
+                ],
+                "sites": [
+                    "cjh"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [
+                    "legacy-managed"
+                ],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}",
+                "vcpus": 4.0
+            },
+            "test-web": {
+                "ansible_host": "172.24.4.2",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "cluster": "pve3.opdal.net",
+                "cluster_type": "proxmox",
+                "config_context": [
+                    {
+                        "site_parameters": {
+                            "dhcp": {
+                                "servers": [
+                                    "172.16.3.15"
+                                ]
+                            },
+                            "dns": {
+                                "search": [
+                                    "opdal.net",
+                                    "ao-test.net",
+                                    "ao-test.org"
+                                ],
+                                "servers": [
+                                    "172.16.3.10",
+                                    "91.90.45.8"
+                                ]
+                            },
+                            "ntp": {
+                                "servers": [
+                                    "h1-rpi1.opdal.net"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "custom_fields": {
+                    "proxmox_node": "pve3",
+                    "proxmox_public_ssh_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOh6JGjZJjcf3BYtYblUbRH9DdzYX3oKA8TFCDinsutH arne@ao-laptop\r\nssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKRxGcu9eaDg3AeqmC+3FLX0RP35XI5bYx6JggsyoP9r arne@auto\r\nssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDp84CwadngAUcUtiwTlEDvJ272mkNgsIc1cvObOocIY2XuTnLbEZz/neR2KZCyQpg2v/im72J/XWtJBw+rHD7ZNjV+hh00UDenTpPy137qvFB3R+aosRx56hfpstpt28msgj4jBProq4vdHRICp5KCeHvZILWjEfiK1wMtdWK8qDqYBj+H/K2cEdKTUUC04mqJBjx5utPx/bb6bJIKxzZLlkmKvYBls8gRptBSh5OiIRJTX6+DmZplZGA3G2sQ4mprSUMetVg31YSGZpZD03EZ8hHoYj0vAt2FxU8Kl7kMjCuEHI+mYblh5lFUdOmA91zUJku+1qEtcGaxAgV7lGhN8Q6MQpNDBp4eKR4pdMbeSajggIIaaolE+eGLUn7CnDGu7R6zf49X3yLOxe0q3Imn/DDsk2detchF1/cwPzyKVgYQDrT/i54qzK80EL0SAvvJcFytZJ2OlUzNxNtQERk2M7InNj40H3N7F02BDeQUhWUf3PIu/dngMJd4t230HG8= one\\arnopdal@PCNOR451656",
+                    "proxmox_vm_storage": "sdb-lvm",
+                    "proxmox_vm_template": "noble-server-cloudimg-amd64-template",
+                    "proxmox_vmid": "100"
+                },
+                "device_id": 102,
+                "device_roles": [
+                    "proxmox-vm"
+                ],
+                "disk": 20480,
+                "is_virtual": true,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "memory": 2048,
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "172.24.4.2",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "private"
+                ],
+                "sites": [
+                    "hvaler"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [
+                    "nginx",
+                    "ssl",
+                    "webserver"
+                ],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}",
+                "vcpus": 2.0
+            },
+            "test-web2": {
+                "ansible_host": "172.24.4.10",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "cluster": "pve3.opdal.net",
+                "cluster_type": "proxmox",
+                "config_context": [
+                    {
+                        "site_parameters": {
+                            "dhcp": {
+                                "servers": [
+                                    "172.16.3.15"
+                                ]
+                            },
+                            "dns": {
+                                "search": [
+                                    "opdal.net",
+                                    "ao-test.net",
+                                    "ao-test.org"
+                                ],
+                                "servers": [
+                                    "172.16.3.10",
+                                    "91.90.45.8"
+                                ]
+                            },
+                            "ntp": {
+                                "servers": [
+                                    "h1-rpi1.opdal.net"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "custom_fields": {
+                    "proxmox_node": "pve3",
+                    "proxmox_public_ssh_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOh6JGjZJjcf3BYtYblUbRH9DdzYX3oKA8TFCDinsutH arne@ao-laptop\r\nssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKRxGcu9eaDg3AeqmC+3FLX0RP35XI5bYx6JggsyoP9r arne@auto\r\nssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDp84CwadngAUcUtiwTlEDvJ272mkNgsIc1cvObOocIY2XuTnLbEZz/neR2KZCyQpg2v/im72J/XWtJBw+rHD7ZNjV+hh00UDenTpPy137qvFB3R+aosRx56hfpstpt28msgj4jBProq4vdHRICp5KCeHvZILWjEfiK1wMtdWK8qDqYBj+H/K2cEdKTUUC04mqJBjx5utPx/bb6bJIKxzZLlkmKvYBls8gRptBSh5OiIRJTX6+DmZplZGA3G2sQ4mprSUMetVg31YSGZpZD03EZ8hHoYj0vAt2FxU8Kl7kMjCuEHI+mYblh5lFUdOmA91zUJku+1qEtcGaxAgV7lGhN8Q6MQpNDBp4eKR4pdMbeSajggIIaaolE+eGLUn7CnDGu7R6zf49X3yLOxe0q3Imn/DDsk2detchF1/cwPzyKVgYQDrT/i54qzK80EL0SAvvJcFytZJ2OlUzNxNtQERk2M7InNj40H3N7F02BDeQUhWUf3PIu/dngMJd4t230HG8= one\\arnopdal@PCNOR451656",
+                    "proxmox_vm_storage": "sdb-lvm",
+                    "proxmox_vm_template": "noble-server-cloudimg-amd64-template",
+                    "proxmox_vmid": "101"
+                },
+                "device_id": 103,
+                "device_roles": [
+                    "proxmox-vm"
+                ],
+                "disk": 20480,
+                "is_virtual": true,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "memory": 4096,
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "172.24.4.10",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "private"
+                ],
+                "sites": [
+                    "hvaler"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [
+                    "nginx",
+                    "ssl",
+                    "webserver"
+                ],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}",
+                "vcpus": 2.0
+            },
+            "testweb104": {
+                "ansible_host": "172.24.4.34",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "cluster": "pve3.opdal.net",
+                "cluster_type": "proxmox",
+                "config_context": [
+                    {
+                        "site_parameters": {
+                            "dhcp": {
+                                "servers": [
+                                    "172.16.3.15"
+                                ]
+                            },
+                            "dns": {
+                                "search": [
+                                    "opdal.net",
+                                    "ao-test.net",
+                                    "ao-test.org"
+                                ],
+                                "servers": [
+                                    "172.16.3.10",
+                                    "91.90.45.8"
+                                ]
+                            },
+                            "ntp": {
+                                "servers": [
+                                    "h1-rpi1.opdal.net"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "custom_fields": {
+                    "proxmox_node": "pve3",
+                    "proxmox_public_ssh_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOh6JGjZJjcf3BYtYblUbRH9DdzYX3oKA8TFCDinsutH arne@ao-laptop\r\nssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKRxGcu9eaDg3AeqmC+3FLX0RP35XI5bYx6JggsyoP9r arne@auto\r\nssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDp84CwadngAUcUtiwTlEDvJ272mkNgsIc1cvObOocIY2XuTnLbEZz/neR2KZCyQpg2v/im72J/XWtJBw+rHD7ZNjV+hh00UDenTpPy137qvFB3R+aosRx56hfpstpt28msgj4jBProq4vdHRICp5KCeHvZILWjEfiK1wMtdWK8qDqYBj+H/K2cEdKTUUC04mqJBjx5utPx/bb6bJIKxzZLlkmKvYBls8gRptBSh5OiIRJTX6+DmZplZGA3G2sQ4mprSUMetVg31YSGZpZD03EZ8hHoYj0vAt2FxU8Kl7kMjCuEHI+mYblh5lFUdOmA91zUJku+1qEtcGaxAgV7lGhN8Q6MQpNDBp4eKR4pdMbeSajggIIaaolE+eGLUn7CnDGu7R6zf49X3yLOxe0q3Imn/DDsk2detchF1/cwPzyKVgYQDrT/i54qzK80EL0SAvvJcFytZJ2OlUzNxNtQERk2M7InNj40H3N7F02BDeQUhWUf3PIu/dngMJd4t230HG8= one\\arnopdal@PCNOR451656",
+                    "proxmox_vm_storage": "sdb-lvm",
+                    "proxmox_vm_template": "noble-server-cloudimg-amd64-template",
+                    "proxmox_vmid": "103"
+                },
+                "device_id": 108,
+                "device_roles": [
+                    "proxmox-vm"
+                ],
+                "disk": 20480,
+                "is_virtual": true,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "memory": 2048,
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "172.24.4.34",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "private"
+                ],
+                "sites": [
+                    "hvaler"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [
+                    "nginx",
+                    "ssl",
+                    "webserver"
+                ],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}",
+                "vcpus": 2.0
+            },
+            "testweb105": {
+                "ansible_host": "172.24.4.42",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "cluster": "pve3.opdal.net",
+                "cluster_type": "proxmox",
+                "config_context": [
+                    {
+                        "site_parameters": {
+                            "dhcp": {
+                                "servers": [
+                                    "172.16.3.15"
+                                ]
+                            },
+                            "dns": {
+                                "search": [
+                                    "opdal.net",
+                                    "ao-test.net",
+                                    "ao-test.org"
+                                ],
+                                "servers": [
+                                    "172.16.3.10",
+                                    "91.90.45.8"
+                                ]
+                            },
+                            "ntp": {
+                                "servers": [
+                                    "h1-rpi1.opdal.net"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "custom_fields": {
+                    "proxmox_node": "pve3",
+                    "proxmox_public_ssh_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOh6JGjZJjcf3BYtYblUbRH9DdzYX3oKA8TFCDinsutH arne@ao-laptop\r\nssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKRxGcu9eaDg3AeqmC+3FLX0RP35XI5bYx6JggsyoP9r arne@auto\r\nssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDp84CwadngAUcUtiwTlEDvJ272mkNgsIc1cvObOocIY2XuTnLbEZz/neR2KZCyQpg2v/im72J/XWtJBw+rHD7ZNjV+hh00UDenTpPy137qvFB3R+aosRx56hfpstpt28msgj4jBProq4vdHRICp5KCeHvZILWjEfiK1wMtdWK8qDqYBj+H/K2cEdKTUUC04mqJBjx5utPx/bb6bJIKxzZLlkmKvYBls8gRptBSh5OiIRJTX6+DmZplZGA3G2sQ4mprSUMetVg31YSGZpZD03EZ8hHoYj0vAt2FxU8Kl7kMjCuEHI+mYblh5lFUdOmA91zUJku+1qEtcGaxAgV7lGhN8Q6MQpNDBp4eKR4pdMbeSajggIIaaolE+eGLUn7CnDGu7R6zf49X3yLOxe0q3Imn/DDsk2detchF1/cwPzyKVgYQDrT/i54qzK80EL0SAvvJcFytZJ2OlUzNxNtQERk2M7InNj40H3N7F02BDeQUhWUf3PIu/dngMJd4t230HG8= one\\arnopdal@PCNOR451656",
+                    "proxmox_vm_storage": "sdb-lvm",
+                    "proxmox_vm_template": "noble-server-cloudimg-amd64-template",
+                    "proxmox_vmid": "104"
+                },
+                "device_id": 109,
+                "device_roles": [
+                    "proxmox-vm"
+                ],
+                "disk": 20480,
+                "is_virtual": true,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "memory": 2048,
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "172.24.4.42",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "private"
+                ],
+                "sites": [
+                    "hvaler"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [
+                    "nginx",
+                    "ssl",
+                    "webserver"
+                ],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}",
+                "vcpus": 2.0
+            },
+            "unifi.opdal.net": {
+                "ansible_host": "91.90.45.3",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "cluster": "pve.opdal.net",
+                "cluster_type": "proxmox",
+                "config_context": [
+                    {}
+                ],
+                "custom_fields": {
+                    "proxmox_vmid": "104"
+                },
+                "device_id": 5,
+                "device_roles": [
+                    "unifi"
+                ],
+                "disk": 50000,
+                "is_virtual": true,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "memory": 4096,
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "91.90.45.3",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "bilx"
+                ],
+                "sites": [
+                    "cjh"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [
+                    "legacy-managed"
+                ],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}",
+                "vcpus": 2.0
+            },
+            "vault": {
+                "ansible_host": "172.16.3.39",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "cluster": "pve2.opdal.net",
+                "cluster_type": "proxmox",
+                "config_context": [
+                    {
+                        "site_parameters": {
+                            "dhcp": {
+                                "servers": [
+                                    "172.16.3.15"
+                                ]
+                            },
+                            "dns": {
+                                "search": [
+                                    "opdal.net",
+                                    "ao-test.net",
+                                    "ao-test.org"
+                                ],
+                                "servers": [
+                                    "172.16.3.10",
+                                    "91.90.45.8"
+                                ]
+                            },
+                            "ntp": {
+                                "servers": [
+                                    "h1-rpi1.opdal.net"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "custom_fields": {
+                    "proxmox_node": "pve2",
+                    "proxmox_public_ssh_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOh6JGjZJjcf3BYtYblUbRH9DdzYX3oKA8TFCDinsutH arne@ao-laptop\r\nssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDp84CwadngAUcUtiwTlEDvJ272mkNgsIc1cvObOocIY2XuTnLbEZz/neR2KZCyQpg2v/im72J/XWtJBw+rHD7ZNjV+hh00UDenTpPy137qvFB3R+aosRx56hfpstpt28msgj4jBProq4vdHRICp5KCeHvZILWjEfiK1wMtdWK8qDqYBj+H/K2cEdKTUUC04mqJBjx5utPx/bb6bJIKxzZLlkmKvYBls8gRptBSh5OiIRJTX6+DmZplZGA3G2sQ4mprSUMetVg31YSGZpZD03EZ8hHoYj0vAt2FxU8Kl7kMjCuEHI+mYblh5lFUdOmA91zUJku+1qEtcGaxAgV7lGhN8Q6MQpNDBp4eKR4pdMbeSajggIIaaolE+eGLUn7CnDGu7R6zf49X3yLOxe0q3Imn/DDsk2detchF1/cwPzyKVgYQDrT/i54qzK80EL0SAvvJcFytZJ2OlUzNxNtQERk2M7InNj40H3N7F02BDeQUhWUf3PIu/dngMJd4t230HG8= one\\arnopdal@PCNOR451656",
+                    "proxmox_vm_storage": "sdb-lvm",
+                    "proxmox_vm_template": "noble-server-cloudimg-amd64-template",
+                    "proxmox_vmid": "118"
+                },
+                "device_id": 96,
+                "device_roles": [
+                    "proxmox-vm"
+                ],
+                "disk": 81920,
+                "is_virtual": true,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "memory": 4096,
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "172.16.3.39",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "private"
+                ],
+                "sites": [
+                    "hvaler"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [
+                    "legacy-managed"
+                ],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}",
+                "vcpus": 3.0
+            },
+            "ztp": {
+                "ansible_host": "172.16.3.15",
+                "aoscx_rest_password": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_PASSWORD\") }}",
+                "aoscx_rest_user": "{{ lookup(\"ansible.builtin.env\", \"ARUBA_USER\") }}",
+                "cluster": "pve2.opdal.net",
+                "cluster_type": "proxmox",
+                "config_context": [
+                    {
+                        "site_parameters": {
+                            "dhcp": {
+                                "servers": [
+                                    "172.16.3.15"
+                                ]
+                            },
+                            "dns": {
+                                "search": [
+                                    "opdal.net",
+                                    "ao-test.net",
+                                    "ao-test.org"
+                                ],
+                                "servers": [
+                                    "172.16.3.10",
+                                    "91.90.45.8"
+                                ]
+                            },
+                            "ntp": {
+                                "servers": [
+                                    "h1-rpi1.opdal.net"
+                                ]
+                            }
+                        }
+                    }
+                ],
+                "custom_fields": {
+                    "proxmox_node": "pve2",
+                    "proxmox_public_ssh_key": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOh6JGjZJjcf3BYtYblUbRH9DdzYX3oKA8TFCDinsutH arne@ao-laptop",
+                    "proxmox_vm_storage": "sdb-lvm",
+                    "proxmox_vm_template": "noble-server-cloudimg-amd64-template",
+                    "proxmox_vmid": "109"
+                },
+                "device_id": 91,
+                "device_roles": [
+                    "proxmox-vm"
+                ],
+                "disk": 51200,
+                "is_virtual": true,
+                "local_context_data": [
+                    null
+                ],
+                "locations": [],
+                "memory": 4096,
+                "netbox_token": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_TOKEN\") }}",
+                "netbox_url": "{{ lookup(\"ansible.builtin.env\", \"NETBOX_API\") }}",
+                "platforms": [
+                    "ubuntu"
+                ],
+                "primary_ip4": "172.16.3.15",
+                "psm_host": "{{ lookup(\"ansible.builtin.env\", \"PSM_IP\") }}",
+                "psm_password": "{{ lookup(\"ansible.builtin.env\", \"PSM_PASSWORD\") }}",
+                "psm_user": "{{ lookup(\"ansible.builtin.env\", \"PSM_USER\") }}",
+                "regions": [
+                    "fysisk"
+                ],
+                "serial": "",
+                "services": [],
+                "site_groups": [
+                    "private"
+                ],
+                "sites": [
+                    "hvaler"
+                ],
+                "status": {
+                    "label": "Active",
+                    "value": "active"
+                },
+                "tags": [
+                    "autoreboot",
+                    "autoupdate"
+                ],
+                "tenants": [
+                    "opdal_net"
+                ],
+                "tftp_server": "{{ lookup(\"ansible.builtin.env\", \"TFTP_SERVER\") }}",
+                "vcpus": 2.0
+            }
+        }
+    },
+    "all": {
+        "children": [
+            "ungrouped",
+            "tags_autoreboot",
+            "tags_autoupdate",
+            "tags_legacy_managed",
+            "tags_nginx",
+            "tags_ssl",
+            "tags_webserver"
+        ]
+    },
+    "tags_autoreboot": {
+        "hosts": [
+            "a1-dns.opdal.net",
+            "console.opdal.net",
+            "a1-jmp-int",
+            "auto.opdal.net",
+            "div.opdal.net",
+            "git.opdal.net",
+            "graylog.opdal.net",
+            "h1-jmp.opdal.net",
+            "huly",
+            "librenms",
+            "nc.opdal.net",
+            "netbox2.opdal.net",
+            "nms.opdal.net",
+            "srv.opdal.net",
+            "ztp"
+        ]
+    },
+    "tags_autoupdate": {
+        "hosts": [
+            "a1-dns.opdal.net",
+            "console.opdal.net",
+            "a1-jmp-int",
+            "auto.opdal.net",
+            "div.opdal.net",
+            "git.opdal.net",
+            "graylog.opdal.net",
+            "h1-jmp.opdal.net",
+            "huly",
+            "librenms",
+            "nc.opdal.net",
+            "netbox.opdal.net",
+            "netbox2.opdal.net",
+            "netbox3",
+            "nms.opdal.net",
+            "srv.opdal.net",
+            "ztp"
+        ]
+    },
+    "tags_legacy_managed": {
+        "hosts": [
+            "console.opdal.net",
+            "st2.opdal.net",
+            "unifi.opdal.net",
+            "vault"
+        ]
+    },
+    "tags_nginx": {
+        "hosts": [
+            "huly",
+            "librenms",
+            "netbox.opdal.net",
+            "netbox3",
+            "semui.opdal.net",
+            "test-web",
+            "test-web2",
+            "testweb104",
+            "testweb105"
+        ]
+    },
+    "tags_ssl": {
+        "hosts": [
+            "huly",
+            "librenms",
+            "netbox.opdal.net",
+            "semui.opdal.net",
+            "test-web",
+            "test-web2",
+            "testweb104",
+            "testweb105"
+        ]
+    },
+    "tags_webserver": {
+        "hosts": [
+            "huly",
+            "librenms",
+            "netbox.opdal.net",
+            "test-web",
+            "test-web2",
+            "testweb104",
+            "testweb105"
+        ]
+    },
+    "ungrouped": {
+        "hosts": [
+            "a1-test",
+            "semui2"
+        ]
+    }
+}
