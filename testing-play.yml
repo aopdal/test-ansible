@@ -1,0 +1,12 @@
+---
+- name: Testing
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Get vdoms
+      ansible.builtin.set_fact:
+        vdoms: "{{ interfaces | get_firewall_vdoms }}"
+
+    - name: Show vdoms
+      ansible.builtin.debug:
+        msg: "VDOMs: {{ vdoms }}"

@@ -1,0 +1,21 @@
+---
+plugin: netbox.netbox.nb_inventory
+#api_endpoint: using environment variable NETBOX_API
+#token: using environment variable NETBOX_TOKEN
+token:
+  type: Bearer
+  value: "{{ lookup('env', 'NETBOX_TOKEN') }}"
+validate_certs : False
+plurals: True
+config_context: True
+prefixes: False
+interfaces: True
+virtual_chassis_name: True
+group_by:
+  - device_roles
+  - tags
+compose:
+  device_id: id
+query_filters:
+  - has_primary_ip: True
+  - status: active
